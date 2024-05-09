@@ -1,6 +1,13 @@
 name: hello_workflow
 on: [push]
 jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step with a secret
+        run: |
+          echo "Secret testing:"
+          echo "This is a secret value: ${{ secrets.SECRET_VALUE }}"
   print-hello:
     runs-on: ubuntu-latest
     steps:
